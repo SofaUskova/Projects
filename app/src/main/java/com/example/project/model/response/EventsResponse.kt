@@ -23,7 +23,7 @@ data class EventsResponse(
 
         fun getNewsEvents(): List<Event> {
             val _events = events ?: emptyList()
-            _events.forEach {
+            _events.forEach { it ->
                 it.content = it.attaches?.mapNotNull { makeInstanceAttachByUri(it.uri ?: "") }
             }
             return _events

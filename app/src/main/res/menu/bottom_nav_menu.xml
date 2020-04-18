@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_feed_news"
+        android:icon="@drawable/ic_feed_news"
+        android:title="@string/title_feeds" />
+
+    <item
+        android:id="@+id/navigation_artist"
+        android:icon="@drawable/ic_artist"
+        android:title="1" />
+
+    <item
+        android:id="@+id/navigation_works"
+        android:icon="@drawable/ic_works"
+        android:title="2" />
+
+    <item
+        android:id="@+id/navigation_expositions"
+        android:icon="@drawable/ic_expositions"
+        android:title="3" />
+
+    <item
+        android:id="@+id/navigation_info"
+        android:icon="@drawable/ic_info"
+        android:title="3" />
+</menu>

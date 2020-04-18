@@ -1,4 +1,4 @@
-package com.company.myartist.model.response
+package com.example.project.model.response
 
 import com.company.myartist.model.*
 

@@ -2,12 +2,13 @@ package com.example.project.api
 
 import com.company.myartist.model.response.*
 import com.example.project.BuildConfig
+import com.example.project.model.response.ArtistsResponce
 import io.reactivex.Observable
 import io.reactivex.Single
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Call
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
@@ -28,7 +29,7 @@ interface ArtistApiService {
             val retrofit = Retrofit.Builder()
                 .baseUrl(BuildConfig.BASE_URL)
                 .client(client)
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
@@ -42,7 +43,8 @@ interface ArtistApiService {
         @Query("artist_ids") artistId: Int = BuildConfig.ARTIST_ID,
         @Query("extends") extends: String = "artists.hello,artists.about_app,artists.media_id,artists.count_works,artists.biography,artists.properties,artists.about_app,artists.contact"
     )
-            : Single<ArtistsResponce>
+//            : Single<ArtistsResponce>
+    : Call<ArtistsResponce>
 
     @GET("expositions.search")
     fun getExpositions(
@@ -62,7 +64,8 @@ interface ArtistApiService {
         @Query("artist_id") artistId: Int = BuildConfig.ARTIST_ID,
         @Query("extends") extends: String = "events.attaches,works.description,works.properties,expositions.media_ids,set.info,artists.hello,works.media_id,works.counters,topics.first_media_id,topics.full,set.info,artists.hello,topics.uris"
     )
-            : Observable<EventsResponse>
+//            : Observable<EventsResponse>
+    : Call<EventsResponse>
 
     @GET("sets.artist_sets")
     fun getCollections(
